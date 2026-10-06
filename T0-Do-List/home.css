@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #121212;
+}
+
+/* BACKGROUND VIDEO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a26b5;
+  z-index: 10;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #2a6fc9;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-title {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* TOGGLE (emoji lives inside the knob) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 68px;
+  height: 38px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 38px;
+  cursor: pointer;
+}
+.slider:before {
+  content: "🌙";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1a26b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: transform 0.3s;
+}
+input:checked + .slider:before {
+  content: "☀️";
+  transform: translateX(30px);
+}
+
+/* PAGE + CARD */
+.page {
+  min-height: 100vh;
+  padding: 90px 16px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.formBox {
+  width: 100%;
+  max-width: 400px;
+  min-height: 420px;
+  padding: 25px 20px;
+  background: #1c1c1c;
+  color: whitesmoke;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+.Thelist {
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* INPUT + ADD BUTTON SIDE BY SIDE */
+.input-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  background: whitesmoke;
+  color: #111;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+#AddListBtn {
+  padding: 10px 22px;
+  background: #1a26b5;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#AddListBtn:hover {
+  background: #1520a0;
+}
+
+/* TASK LIST */
+.tasklist {
+  margin: 22px 0 8px;
+  font-size: 16px;
+}
+#emptyMsg {
+  color: gray;
+  font-size: 14px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 8px 0;
+}
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  word-break: break-word;
+}
+.delete,
+.edit {
+  background: none;
+  border: none;
+  color: #ff5c5c;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.edit {
+  color: #4da3ff;
+}
+.completed-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+#stats {
+  display: none;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid #1a26b5;
+  font-size: 14px;
+}
+
+/* LIGHT MODE */
+body.light {
+  background-color: white;
+}
+body.light .formBox {
+  background: white;
+  color: black;
+}
+body.light .field-label {
+  color: #555;
+}
+body.light input[type="text"] {
+  border-color: #ccc;
+}
+body.light .task-item {
+  border-color: #ddd;
+}

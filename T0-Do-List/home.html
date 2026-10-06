@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <title>My To-Do-List</title>
+  </head>
+  <body>
+    <video autoplay muted loop playsinline id="bg-video" poster="fallback.jpg">
+      <source src="vid/coverfire.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
+
+    <nav class="navbar">
+      <div class="brand">
+        <div class="brand-icon">✔</div>
+        <span class="brand-title">To-Do List</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+
+    <main class="page">
+      <div class="formBox">
+        <h2 class="Thelist">My Tasks</h2>
+
+        <label class="field-label" for="taskInput">New task</label>
+        <div class="input-row">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Add a task..."
+            maxlength="50"
+          />
+          <button id="AddListBtn">Add</button>
+        </div>
+
+        <h3 class="tasklist">Task List</h3>
+        <p id="emptyMsg">Nothing yet added. Try adding something above ➕</p>
+        <div id="taskContainer"></div>
+
+        <div id="stats">
+          Completed: <span id="completed">0</span> | Uncompleted:
+          <span id="uncompleted">0</span>
+        </div>
+      </div>
+    </main>
+
+    <script src="home.js"></script>
+  </body>
+</html>
